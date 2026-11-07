@@ -1,0 +1,71 @@
+:root {
+  color-scheme: light;
+  --ink: #17221e;
+  --muted: #66736d;
+  --accent: #24684f;
+  --line: #dce5df;
+  --surface: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html, body { min-height: 100%; }
+
+body {
+  margin: 0;
+  background: #f1f5f2;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.shell {
+  width: min(760px, calc(100% - 40px));
+  margin: 12vh auto;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+h1 {
+  margin: 14px 0;
+  font-size: clamp(42px, 8vw, 68px);
+  letter-spacing: -.055em;
+}
+
+.intro {
+  max-width: 590px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.status-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-top: 42px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 0 10px 30px #21372d0a;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 auto;
+  margin-top: 7px;
+  border-radius: 50%;
+  background: #4a9a70;
+  box-shadow: 0 0 0 4px #e9f5ed;
+}
+
+.status-card h2 { margin: 0 0 7px; font-size: 17px; }
+.status-card p, footer { color: var(--muted); font-size: 14px; line-height: 1.5; }
+.status-card p { margin: 0; }
+footer { margin-top: 24px; }

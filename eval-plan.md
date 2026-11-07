@@ -51,3 +51,4 @@ Measure whether hybrid retrieval and reranking improve retrieval and whether ans
 - Random seeds and deterministic tie-break behavior documented
 - Machine/OS, dependency lockfile, run date, commit, and sample count recorded
 - Aggregate and slice metrics plus per-query failures saved as artifacts
+

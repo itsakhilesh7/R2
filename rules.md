@@ -37,3 +37,4 @@ These are implementation constraints for every contributor and coding agent.
 3. Evaluate BM25/FTS, dense, hybrid, and reranked hybrid independently. Do not tune against the hidden test set or report only favorable slices.
 4. Use the approved baseline and documented relative regression formula for CI. Do not weaken a gate to make a failing build green without recording the decision.
 5. Do not claim “production-ready,” “secure,” or measured resume-bullet results without evidence.
+

@@ -86,3 +86,4 @@ Multi-tenant authorization, production SSO, distributed workers, OCR for scanned
 ## 9. Decisions to confirm during Phase 0
 
 Proceed with defaults unless repository constraints contradict them: local BGE-small embeddings (384 dimensions); configurable hosted/local answer generation; no authentication for localhost-only development; 25 MiB upload cap; English-first evaluation; default chunk size/overlap above. Record decisions and any changes in an ADR or project README.
+

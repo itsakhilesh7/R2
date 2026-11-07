@@ -41,7 +41,7 @@ Codex scaffolds Docker, UI, and general boilerplate. The user hand-writes chunki
 These values remain explicitly unresolved until supplied by the user:
 
 - Sample corpus: TBD
-- Reference machine: CPU / RAM / GPU TBD
+- Reference machine: Intel Core i7-10510U (1.80/2.30 GHz), 8 GB RAM (7.57 GB usable), Intel UHD Graphics (128 MB)
 - Phase 4 generator: Ollama model or free API TBD
 
 No corpus-dependent quality or hardware-dependent latency claim is valid until these inputs are selected and a reproducible evaluation is run.
@@ -59,3 +59,4 @@ No corpus-dependent quality or hardware-dependent latency claim is valid until t
 - [BAAI/bge-small-en-v1.5 model card](https://huggingface.co/BAAI/bge-small-en-v1.5)
 - [BAAI/bge-reranker-base model card](https://huggingface.co/BAAI/bge-reranker-base)
 - Project requirements: `prd.md`, `architecture.md`, `phases.md`, `rules.md`, `agent-workflow.md`
+

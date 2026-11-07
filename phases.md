@@ -47,3 +47,4 @@ Add automated checks, DB integration coverage, evaluation regression gate, Compo
 ## Scope control
 
 If implementation exceeds 45 hours, preserve ingestion correctness, hybrid retrieval, citations, and reproducible evaluation first. Reduce UI polish before cutting core retrieval/evaluation. Put query routing, semantic caching, feedback-driven hard negatives, auth integrations, and scaling beyond a single local Compose stack in follow-up work.
+

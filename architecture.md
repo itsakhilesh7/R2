@@ -114,3 +114,4 @@ Compose services use pinned compatible major versions, persistent named DB volum
 ## 11. Architecture decision records
 
 Record meaningful changes: vector store, embedding model/dimension, parser, chunking, answer provider, cache policy, deployment/authentication. For each record include context, decision, alternatives, impact, and migration/re-embedding implications.
+

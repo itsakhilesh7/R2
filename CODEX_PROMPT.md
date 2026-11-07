@@ -33,3 +33,4 @@ Begin with repository reconnaissance only. Summarize findings and propose Phase 
 ## How to continue
 
 After the first response, review the proposed decisions. Then ask Codex to execute Phase 0 or a specific phase by name. At every phase boundary, review the acceptance criteria and results before starting the next phase.
+
