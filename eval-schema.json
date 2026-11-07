@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/hybrid-rag/eval-schema.json",
+  "title": "Hybrid RAG evaluation case",
+  "description": "One query and its expected evidence for retrieval and answer evaluation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "query", "answerable", "relevant_chunks", "tags"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "query": {"type": "string", "minLength": 1},
+    "answerable": {"type": "boolean"},
+    "expected_answer": {"type": ["string", "null"]},
+    "relevant_chunks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["chunk_id", "relevance"],
+        "properties": {
+          "chunk_id": {"type": "string", "minLength": 1},
+          "relevance": {"type": "integer", "minimum": 1, "maximum": 3},
+          "evidence_quote": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "split": {"enum": ["development", "test"]},
+    "notes": {"type": ["string", "null"]}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"answerable": {"const": false}}},
+      "then": {"properties": {"relevant_chunks": {"maxItems": 0}}}
+    },
+    {
+      "if": {"properties": {"answerable": {"const": true}}},
+      "then": {"properties": {"relevant_chunks": {"minItems": 1}}}
+    }
+  ]
+}

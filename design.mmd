@@ -1,0 +1,29 @@
+flowchart LR
+    U[User] --> UI[Next.js UI]
+    UI -->|upload / search / answer| API[FastAPI]
+
+    subgraph ING[Ingestion]
+      API --> VAL[Validate and hash]
+      VAL --> PARSE[PDF / HTML / Markdown parser]
+      PARSE --> CHUNK[Normalize and chunk with locations]
+      CHUNK --> EMB[Embedding adapter]
+      EMB --> PG[(PostgreSQL + pgvector)]
+    end
+
+    subgraph RET[Retrieval and answering]
+      API --> Q[Query embedding]
+      Q --> DENSE[Dense search]
+      API --> FTS[PostgreSQL full-text search]
+      DENSE --> RRF[RRF fusion]
+      FTS --> RRF
+      RRF --> RERANK[Cross-encoder: top 20]
+      RERANK --> ANSWER[Evidence-grounded answer]
+      ANSWER --> CITE[Citation validation]
+      CITE --> UI
+    end
+
+    DENSE <--> PG
+    FTS <--> PG
+    API <--> REDIS[(Redis cache)]
+    API --> TRACE[Trace adapter]
+    TRACE -. optional export .-> LF[Langfuse-compatible backend]
